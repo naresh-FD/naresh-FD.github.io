@@ -1,3 +1,6 @@
+import { Globe2, Mail } from "lucide-react";
+import { SiGithub, SiLinkedin } from "react-icons/si";
+
 const projects = [
   {
     name: "react-intelligent-test-generator",
@@ -45,21 +48,25 @@ const contacts = [
     label: "Email",
     value: "mail2nareshfd@gmail.com",
     href: "mailto:mail2nareshfd@gmail.com",
+    icon: Mail,
   },
   {
     label: "LinkedIn",
     value: "linkedin.com/in/naresh-kumar-r-a590181b",
     href: "https://www.linkedin.com/in/naresh-kumar-r-a590181b/",
+    icon: SiLinkedin,
   },
   {
     label: "GitHub",
     value: "github.com/naresh-FD",
     href: "https://github.com/naresh-FD",
+    icon: SiGithub,
   },
   {
     label: "Portfolio",
     value: "naresh-fd.github.io",
     href: "https://naresh-fd.github.io/",
+    icon: Globe2,
   },
 ];
 
@@ -188,8 +195,13 @@ export default function Home() {
         <div className="contact-list" aria-label="Contact links">
           {contacts.map((contact) => (
             <a className="contact-card" href={contact.href} key={contact.label} {...externalLink}>
-              <span>{contact.label}</span>
-              <strong>{contact.value}</strong>
+              <span className="contact-icon" aria-hidden="true">
+                <contact.icon size={22} strokeWidth={1.9} />
+              </span>
+              <span className="contact-details">
+                <span>{contact.label}</span>
+                <strong>{contact.value}</strong>
+              </span>
             </a>
           ))}
         </div>

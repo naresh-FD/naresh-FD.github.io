@@ -378,7 +378,9 @@ h2 {
 
 .contact-card {
   display: grid;
-  gap: 8px;
+  grid-template-columns: 46px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -394,12 +396,37 @@ h2 {
   transform: translateY(-2px);
 }
 
-.contact-card span {
+.contact-icon {
+  display: inline-flex;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--panel-soft);
+  color: var(--accent-strong);
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.contact-card:hover .contact-icon {
+  background: var(--accent);
+  color: white;
+}
+
+.contact-details {
+  display: grid;
+  min-width: 0;
+  gap: 6px;
+}
+
+.contact-details > span {
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-.contact-card strong {
+.contact-details strong {
   color: var(--ink);
   font-size: clamp(1rem, 2vw, 1.22rem);
   overflow-wrap: anywhere;
