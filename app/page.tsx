@@ -1,6 +1,8 @@
 import {
   Blocks,
   Braces,
+  CloudCog,
+  Database,
   Fingerprint,
   GitPullRequest,
   Globe2,
@@ -10,6 +12,25 @@ import {
   Workflow,
 } from "lucide-react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
+import {
+  SiAngular,
+  SiGithubactions,
+  SiGithubcopilot,
+  SiJavascript,
+  SiLangchain,
+  SiMongodb,
+  SiMysql,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiOllama,
+  SiOpenjdk,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiRedux,
+  SiSass,
+  SiTypescript,
+} from "react-icons/si";
 import { ThemeToggle } from "./theme-toggle";
 
 const externalLink = {
@@ -80,35 +101,58 @@ const projects = [
 const technologies = [
   {
     group: "Frontend",
-    items: ["TypeScript", "JavaScript", "React", "Next.js", "Angular", "Redux", "Sass"],
+    items: [
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "React", icon: SiReact },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "Angular", icon: SiAngular },
+      { name: "Redux", icon: SiRedux },
+      { name: "Sass", icon: SiSass },
+    ],
   },
   {
     group: "Backend & databases",
-    items: ["Node.js", "Java", "Python", "MongoDB", "PostgreSQL", "MySQL", "Microsoft SQL Server"],
+    items: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Java", icon: SiOpenjdk },
+      { name: "Python", icon: SiPython },
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "MySQL", icon: SiMysql },
+      { name: "Microsoft SQL Server", icon: Database },
+    ],
   },
   {
     group: "DevOps & AI tooling",
-    items: ["Azure DevOps", "GitHub Actions", "Git", "LangGraph", "Ollama", "GitHub Copilot"],
+    items: [
+      { name: "Azure DevOps", icon: CloudCog },
+      { name: "GitHub Actions", icon: SiGithubactions },
+      { name: "Git", icon: GitPullRequest },
+      { name: "LangGraph", icon: SiLangchain },
+      { name: "Ollama", icon: SiOllama },
+      { name: "GitHub Copilot", icon: SiGithubcopilot },
+    ],
   },
 ];
 
 const experience = [
   {
     role: "Associate Architect",
-    organization: "Global IT services firm",
+    organization: "Enterprise commercial banking platform",
     duration: "2024 - Present",
     focus: "Frontend architecture, identity modernization, and AI developer tooling for an enterprise commercial banking platform.",
   },
   {
     role: "Technical Lead",
-    organization: "Product engineering company, Chennai",
-    duration: "Previous",
+    organization: "Cross-functional product engineering",
+    duration: "Prior role",
     focus: "Cross-functional team leadership and React and Node.js product delivery.",
   },
   {
     role: "Full-Stack Developer",
-    organization: "Multiple organizations",
-    duration: "Earlier",
+    organization: "Web platforms across the stack",
+    duration: "Earlier roles",
     focus: "Web application development across frontend, backend, databases, and delivery systems.",
   },
 ];
@@ -139,9 +183,9 @@ export default function Home() {
 
         <div className="hero-grid" id="top">
           <div className="hero-copy">
-            <p className="eyebrow">Associate Architect / 13+ years in engineering</p>
+            <p className="eyebrow">Enterprise banking / Identity / Local-first AI</p>
             <h1 id="hero-title">Naresh Kumar R</h1>
-            <p className="role-line">Associate Architect · Full-Stack Engineering · AI Developer Tooling</p>
+            <p className="role-line">Associate Architect with 13+ years across full-stack engineering and technical leadership.</p>
             <p className="intro">
               Building enterprise web platforms with a current focus on secure banking architecture and local-first AI developer tooling.
             </p>
@@ -237,7 +281,11 @@ export default function Home() {
           {technologies.map((technology) => (
             <div className="tech-group" key={technology.group}>
               <h3>{technology.group}</h3>
-              <div className="tech-list">{technology.items.map((item) => <span key={item}>{item}</span>)}</div>
+              <div className="tech-list">
+                {technology.items.map((item) => (
+                  <span key={item.name}><item.icon size={19} aria-hidden="true" />{item.name}</span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -273,19 +321,21 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="section contact-section" id="contact" aria-labelledby="contact-title">
-        <div>
-          <p className="eyebrow">Contact</p>
-          <h2 id="contact-title">Let&apos;s compare notes.</h2>
-          <p className="contact-copy">If this overlaps with what you&apos;re working on, explore the repositories or get in touch.</p>
-        </div>
-        <div className="contact-list" aria-label="Contact links">
-          {contacts.map((contact) => (
-            <a className="contact-card" href={contact.href} key={contact.label} {...externalLink}>
-              <span className="contact-icon" aria-hidden="true"><contact.icon size={22} strokeWidth={1.9} /></span>
-              <span className="contact-details"><span>{contact.label}</span><strong>{contact.value}</strong></span>
-            </a>
-          ))}
+      <section className="contact-band" id="contact" aria-labelledby="contact-title">
+        <div className="contact-inner">
+          <div>
+            <p className="eyebrow">Contact</p>
+            <h2 id="contact-title">Let&apos;s compare notes.</h2>
+            <p className="contact-copy">If secure platforms, developer experience, or local-first AI overlaps with your work, reach out through any of these channels.</p>
+          </div>
+          <div className="contact-list" aria-label="Contact links">
+            {contacts.map((contact) => (
+              <a className="contact-card" href={contact.href} key={contact.label} {...externalLink}>
+                <span className="contact-icon" aria-hidden="true"><contact.icon size={22} strokeWidth={1.9} /></span>
+                <span className="contact-details"><span>{contact.label}</span><strong>{contact.value}</strong></span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </main>
