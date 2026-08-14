@@ -4,7 +4,7 @@ const projects = [
     type: "React testing automation",
     summary:
       "A local, AST-based generator that analyzes React and TypeScript code, then scaffolds tests aligned with React Testing Library practices.",
-    href: "https://github.com/naresh-FD/react-intelligent-test-generator",
+    href: "https://naresh-fd.github.io/react-intelligent-test-generator/",
     stat: "2.5 MB",
   },
   {
@@ -12,7 +12,7 @@ const projects = [
     type: "Developer documentation",
     summary:
       "A documentation generator for React, TypeScript, Java, and Spring Boot projects with Markdown, PDF, and optional static site output.",
-    href: "https://github.com/naresh-FD/RepoScribe",
+    href: "https://naresh-fd.github.io/RepoScribe/",
     stat: "Docs site",
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     type: "Security scanning",
     summary:
       "A local-first static security scanner for JavaScript, TypeScript, React, Java, and Python, with optional local LLM enrichment.",
-    href: "https://github.com/naresh-FD/Argus",
+    href: "https://github.com/naresh-FD/Argus/blob/main/docs/local-workflows.md",
     stat: "Local-first",
   },
   {
@@ -28,7 +28,7 @@ const projects = [
     type: "AI governance",
     summary:
       "A reusable governance template for GitHub Copilot instructions, prompt workflows, secure coding guardrails, and audit-oriented controls.",
-    href: "https://github.com/naresh-FD/copilot-governance",
+    href: "https://naresh-fd.github.io/copilot-governance/",
     stat: "Guardrails",
   },
 ];
@@ -47,6 +47,11 @@ const contacts = [
     href: "mailto:mail2nareshfd@gmail.com",
   },
   {
+    label: "LinkedIn",
+    value: "linkedin.com/in/naresh-kumar-r-a590181b",
+    href: "https://www.linkedin.com/in/naresh-kumar-r-a590181b/",
+  },
+  {
     label: "GitHub",
     value: "github.com/naresh-FD",
     href: "https://github.com/naresh-FD",
@@ -58,19 +63,29 @@ const contacts = [
   },
 ];
 
+const externalLink = {
+  target: "_blank",
+  rel: "noopener noreferrer",
+};
+
 export default function Home() {
   return (
     <main>
       <section className="hero" aria-labelledby="hero-title">
         <nav className="nav" aria-label="Primary navigation">
-          <a className="brand" href="https://naresh-fd.github.io/">
+          <a className="brand" href="https://naresh-fd.github.io/" {...externalLink}>
             Naresh Kumar R
           </a>
           <div className="nav-links">
             <a href="#work">Work</a>
             <a href="#focus">Focus</a>
             <a href="#contact">Contact</a>
-            <a href="https://github.com/naresh-FD">GitHub</a>
+            <a href="https://www.linkedin.com/in/naresh-kumar-r-a590181b/" {...externalLink}>
+              LinkedIn
+            </a>
+            <a href="https://github.com/naresh-FD" {...externalLink}>
+              GitHub
+            </a>
           </div>
         </nav>
 
@@ -84,10 +99,17 @@ export default function Home() {
               engineering teams.
             </p>
             <div className="hero-actions" aria-label="Profile links">
-              <a className="button primary" href="https://github.com/naresh-FD">
+              <a className="button primary" href="https://github.com/naresh-FD" {...externalLink}>
                 View GitHub
               </a>
-              <a className="button secondary" href="https://naresh-fd.github.io/">
+              <a
+                className="button secondary"
+                href="https://www.linkedin.com/in/naresh-kumar-r-a590181b/"
+                {...externalLink}
+              >
+                LinkedIn
+              </a>
+              <a className="button secondary" href="https://naresh-fd.github.io/" {...externalLink}>
                 Current site
               </a>
             </div>
@@ -96,20 +118,20 @@ export default function Home() {
           <aside className="profile-panel" aria-label="GitHub profile summary">
             <img
               src="https://avatars.githubusercontent.com/u/50324374?v=4"
-              alt="Naresh FD GitHub avatar"
+              alt="Naresh Kumar R GitHub avatar"
               className="avatar"
             />
             <div>
               <p className="profile-name">Naresh Kumar R</p>
-              <p className="profile-meta">@naresh-FD · 4 public repositories highlighted</p>
+              <p className="profile-meta">@naresh-FD - 4 public repositories highlighted</p>
             </div>
             <div className="metric-row">
               <span>Default branch</span>
               <strong>main</strong>
             </div>
             <div className="metric-row">
-              <span>Profile</span>
-              <strong>GitHub</strong>
+              <span>Professional profile</span>
+              <strong>LinkedIn</strong>
             </div>
           </aside>
         </div>
@@ -143,8 +165,8 @@ export default function Home() {
               </div>
               <h3>{project.name}</h3>
               <p>{project.summary}</p>
-              <a href={project.href} aria-label={`Open ${project.name} on GitHub`}>
-                Open repository
+              <a href={project.href} aria-label={`Open ${project.name} documentation`} {...externalLink}>
+                View docs
               </a>
             </article>
           ))}
@@ -157,12 +179,12 @@ export default function Home() {
           <h2 id="contact-title">Get in touch with Naresh Kumar R.</h2>
           <p className="contact-copy">
             For project discussions, collaboration, or repository questions,
-            use email or connect through GitHub.
+            use email or connect through LinkedIn and GitHub.
           </p>
         </div>
         <div className="contact-list" aria-label="Contact links">
           {contacts.map((contact) => (
-            <a className="contact-card" href={contact.href} key={contact.label}>
+            <a className="contact-card" href={contact.href} key={contact.label} {...externalLink}>
               <span>{contact.label}</span>
               <strong>{contact.value}</strong>
             </a>
