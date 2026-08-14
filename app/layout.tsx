@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://naresh-fd.github.io"),
   title: "Naresh Kumar R | Developer Portfolio",
   description:
     "Developer portfolio for Naresh Kumar R, featuring public GitHub projects for testing automation, documentation, security scanning, and AI governance.",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     title: "Naresh Kumar R | Developer Portfolio",
     description:
       "Public GitHub work across React tooling, documentation, security scanning, and AI governance.",
-    url: "https://naresh-fd-portfolio.nareshdvm.chatgpt.site/",
+    url: "https://naresh-fd.github.io/",
     siteName: "Naresh Kumar R",
     images: [
       {
