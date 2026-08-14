@@ -13,31 +13,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Naresh FD | Developer Portfolio",
+  title: "Naresh Kumar R | Developer Portfolio",
   description:
-    "Developer portfolio for Naresh FD, featuring public GitHub projects for testing automation, documentation, security scanning, and AI governance.",
+    "Developer portfolio for Naresh Kumar R, featuring public GitHub projects for testing automation, documentation, security scanning, and AI governance.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
   },
   openGraph: {
-    title: "Naresh FD | Developer Portfolio",
+    title: "Naresh Kumar R | Developer Portfolio",
     description:
       "Public GitHub work across React tooling, documentation, security scanning, and AI governance.",
     url: "https://naresh-fd.github.io/",
-    siteName: "Naresh FD",
+    siteName: "Naresh Kumar R",
     images: [
       {
         url: "https://avatars.githubusercontent.com/u/50324374?v=4",
         width: 460,
         height: 460,
-        alt: "Naresh FD GitHub avatar",
+        alt: "Naresh Kumar R GitHub avatar",
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "Naresh FD | Developer Portfolio",
+    title: "Naresh Kumar R | Developer Portfolio",
     description:
       "Public GitHub work across React tooling, documentation, security scanning, and AI governance.",
     images: ["https://avatars.githubusercontent.com/u/50324374?v=4"],

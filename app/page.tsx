@@ -40,17 +40,36 @@ const capabilities = [
   "Prompt governance and AI workflow standards",
 ];
 
+const contacts = [
+  {
+    label: "Email",
+    value: "mail2nareshfd@gmail.com",
+    href: "mailto:mail2nareshfd@gmail.com",
+  },
+  {
+    label: "GitHub",
+    value: "github.com/naresh-FD",
+    href: "https://github.com/naresh-FD",
+  },
+  {
+    label: "Portfolio",
+    value: "naresh-fd.github.io",
+    href: "https://naresh-fd.github.io/",
+  },
+];
+
 export default function Home() {
   return (
     <main>
       <section className="hero" aria-labelledby="hero-title">
         <nav className="nav" aria-label="Primary navigation">
           <a className="brand" href="https://naresh-fd.github.io/">
-            Naresh FD
+            Naresh Kumar R
           </a>
           <div className="nav-links">
             <a href="#work">Work</a>
             <a href="#focus">Focus</a>
+            <a href="#contact">Contact</a>
             <a href="https://github.com/naresh-FD">GitHub</a>
           </div>
         </nav>
@@ -58,7 +77,7 @@ export default function Home() {
         <div className="hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">Developer portfolio</p>
-            <h1 id="hero-title">Naresh FD builds practical developer tools.</h1>
+            <h1 id="hero-title">Naresh Kumar R builds practical developer tools.</h1>
             <p className="intro">
               Public work focused on test generation, repository documentation,
               security scanning, and governance patterns for AI-assisted
@@ -81,8 +100,8 @@ export default function Home() {
               className="avatar"
             />
             <div>
-              <p className="profile-name">naresh-FD</p>
-              <p className="profile-meta">4 public repositories highlighted</p>
+              <p className="profile-name">Naresh Kumar R</p>
+              <p className="profile-meta">@naresh-FD · 4 public repositories highlighted</p>
             </div>
             <div className="metric-row">
               <span>Default branch</span>
@@ -132,14 +151,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section contact-section" aria-labelledby="contact-title">
+      <section className="section contact-section" id="contact" aria-labelledby="contact-title">
         <div>
-          <p className="eyebrow">Connect</p>
-          <h2 id="contact-title">Explore the source, docs, and project history.</h2>
+          <p className="eyebrow">Contact</p>
+          <h2 id="contact-title">Get in touch with Naresh Kumar R.</h2>
+          <p className="contact-copy">
+            For project discussions, collaboration, or repository questions,
+            use email or connect through GitHub.
+          </p>
         </div>
-        <a className="button primary" href="https://github.com/naresh-FD">
-          github.com/naresh-FD
-        </a>
+        <div className="contact-list" aria-label="Contact links">
+          {contacts.map((contact) => (
+            <a className="contact-card" href={contact.href} key={contact.label}>
+              <span>{contact.label}</span>
+              <strong>{contact.value}</strong>
+            </a>
+          ))}
+        </div>
       </section>
     </main>
   );
