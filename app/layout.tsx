@@ -14,34 +14,34 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://naresh-fd.github.io"),
-  title: "Naresh Kumar R | Developer Portfolio",
+  title: "Naresh Kumar R | Associate Architect",
   description:
-    "Developer portfolio for Naresh Kumar R, featuring public GitHub projects for testing automation, documentation, security scanning, and AI governance.",
+    "Associate Architect with 13+ years in full-stack engineering, secure banking architecture, and local-first AI developer tooling.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
   },
   openGraph: {
-    title: "Naresh Kumar R | Developer Portfolio",
+    title: "Naresh Kumar R | Associate Architect",
     description:
-      "Public GitHub work across React tooling, documentation, security scanning, and AI governance.",
+      "Full-stack engineering, secure banking architecture, and local-first AI developer tooling.",
     url: "https://naresh-fd.github.io/",
     siteName: "Naresh Kumar R",
     images: [
       {
-        url: "/og.png",
+        url: "/og-role.png",
         width: 1536,
         height: 1024,
-        alt: "Naresh Kumar R - practical tools for clearer engineering work",
+        alt: "Naresh Kumar R - Associate Architect and AI developer tooling builder",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Naresh Kumar R | Developer Portfolio",
+    title: "Naresh Kumar R | Associate Architect",
     description:
-      "Public GitHub work across React tooling, documentation, security scanning, and AI governance.",
-    images: ["/og.png"],
+      "Full-stack engineering, secure banking architecture, and local-first AI developer tooling.",
+    images: ["/og-role.png"],
   },
 };
 
