@@ -24,23 +24,23 @@ export const metadata: Metadata = {
     title: "Naresh Kumar R | Developer Portfolio",
     description:
       "Public GitHub work across React tooling, documentation, security scanning, and AI governance.",
-    url: "https://naresh-fd.github.io/",
+    url: "https://naresh-fd-portfolio.nareshdvm.chatgpt.site/",
     siteName: "Naresh Kumar R",
     images: [
       {
-        url: "https://avatars.githubusercontent.com/u/50324374?v=4",
-        width: 460,
-        height: 460,
-        alt: "Naresh Kumar R GitHub avatar",
+        url: "/og.png",
+        width: 1536,
+        height: 1024,
+        alt: "Naresh Kumar R - practical tools for clearer engineering work",
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Naresh Kumar R | Developer Portfolio",
     description:
       "Public GitHub work across React tooling, documentation, security scanning, and AI governance.",
-    images: ["https://avatars.githubusercontent.com/u/50324374?v=4"],
+    images: ["/og.png"],
   },
 };
 

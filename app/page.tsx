@@ -91,12 +91,14 @@ export default function Home() {
 
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">Developer portfolio</p>
-            <h1 id="hero-title">Naresh Kumar R builds practical developer tools.</h1>
+            <p className="eyebrow">Software engineer &amp; tool builder</p>
+            <h1 id="hero-title">
+              Building tools that make <span>engineering work clearer.</span>
+            </h1>
             <p className="intro">
-              Public work focused on test generation, repository documentation,
-              security scanning, and governance patterns for AI-assisted
-              engineering teams.
+              I&apos;m Naresh Kumar R. I create practical, local-first tools for
+              test generation, repository documentation, security scanning,
+              and responsible AI-assisted development.
             </p>
             <div className="hero-actions" aria-label="Profile links">
               <a className="button primary" href="https://github.com/naresh-FD" {...externalLink}>
@@ -115,23 +117,24 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="profile-panel" aria-label="GitHub profile summary">
-            <img
-              src="https://avatars.githubusercontent.com/u/50324374?v=4"
-              alt="Naresh Kumar R GitHub avatar"
-              className="avatar"
-            />
-            <div>
-              <p className="profile-name">Naresh Kumar R</p>
-              <p className="profile-meta">@naresh-FD - 4 public repositories highlighted</p>
+          <aside className="hero-portrait" aria-label="Naresh Kumar R profile">
+            <div className="portrait-frame">
+              <img
+                src="https://avatars.githubusercontent.com/u/50324374?v=4"
+                alt="Naresh Kumar R"
+                className="avatar"
+              />
             </div>
-            <div className="metric-row">
-              <span>Default branch</span>
-              <strong>main</strong>
+            <div className="profile-strip">
+              <div>
+                <p className="profile-name">Naresh Kumar R</p>
+                <p className="profile-meta">Developer tools / AI governance</p>
+              </div>
+              <span className="availability">Open to connect</span>
             </div>
-            <div className="metric-row">
-              <span>Professional profile</span>
-              <strong>LinkedIn</strong>
+            <div className="portrait-note" aria-hidden="true">
+              <span>01</span>
+              <p>Local-first thinking.<br />Reviewable results.</p>
             </div>
           </aside>
         </div>
