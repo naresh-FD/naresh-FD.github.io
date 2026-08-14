@@ -11,7 +11,8 @@ import {
   Sparkles,
   Workflow,
 } from "lucide-react";
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { SiGithub } from "react-icons/si";
 import {
   SiAngular,
   SiGithubactions,
@@ -136,32 +137,11 @@ const technologies = [
   },
 ];
 
-const experience = [
-  {
-    role: "Associate Architect",
-    organization: "Enterprise commercial banking platform",
-    duration: "2024 - Present",
-    focus: "Frontend architecture, identity modernization, and AI developer tooling for an enterprise commercial banking platform.",
-  },
-  {
-    role: "Technical Lead",
-    organization: "Cross-functional product engineering",
-    duration: "Prior role",
-    focus: "Cross-functional team leadership and React and Node.js product delivery.",
-  },
-  {
-    role: "Full-Stack Developer",
-    organization: "Web platforms across the stack",
-    duration: "Earlier roles",
-    focus: "Web application development across frontend, backend, databases, and delivery systems.",
-  },
-];
-
 const contacts = [
-  { label: "Email", value: "mail2nareshfd@gmail.com", href: "mailto:mail2nareshfd@gmail.com", icon: Mail },
-  { label: "LinkedIn", value: "linkedin.com/in/naresh-kumar-r-a590181b", href: "https://www.linkedin.com/in/naresh-kumar-r-a590181b/", icon: SiLinkedin },
-  { label: "GitHub", value: "github.com/naresh-FD", href: "https://github.com/naresh-FD", icon: SiGithub },
-  { label: "Portfolio", value: "naresh-fd.github.io", href: "https://naresh-fd.github.io/", icon: Globe2 },
+  { label: "Email", value: "mail2nareshfd@gmail.com", href: "mailto:mail2nareshfd@gmail.com", icon: Mail, iconClass: undefined },
+  { label: "LinkedIn", value: "linkedin.com/in/naresh-kumar-r-a590181b", href: "https://www.linkedin.com/in/naresh-kumar-r-a590181b/", icon: FaLinkedinIn, iconClass: undefined },
+  { label: "GitHub", value: "github.com/naresh-FD", href: "https://github.com/naresh-FD", icon: SiGithub, iconClass: undefined },
+  { label: "Portfolio", value: "naresh-fd.github.io", href: "https://naresh-fd.github.io/", icon: Globe2, iconClass: undefined },
 ];
 
 export default function Home() {
@@ -174,7 +154,6 @@ export default function Home() {
             <div className="nav-links">
               <a href="#about">About</a>
               <a href="#work">Work</a>
-              <a href="#experience">Experience</a>
               <a href="#contact">Contact</a>
             </div>
             <ThemeToggle />
@@ -182,48 +161,37 @@ export default function Home() {
         </nav>
 
         <div className="hero-grid" id="top">
-          <div className="hero-copy">
-            <p className="eyebrow">Enterprise banking / Identity / Local-first AI</p>
-            <h1 id="hero-title">Naresh Kumar R</h1>
-            <p className="role-line">Associate Architect with 13+ years across full-stack engineering and technical leadership.</p>
-            <p className="intro">
-              Building enterprise web platforms with a current focus on secure banking architecture and local-first AI developer tooling.
-            </p>
-            <div className="hero-actions" aria-label="Profile links">
-              <a className="button primary" href="https://www.linkedin.com/in/naresh-kumar-r-a590181b/" {...externalLink}>
-                <SiLinkedin aria-hidden="true" /> LinkedIn
-              </a>
-              <a className="button secondary" href="mailto:mail2nareshfd@gmail.com" {...externalLink}>
-                <Mail size={18} aria-hidden="true" /> Email
-              </a>
-              <a className="button secondary" href="https://github.com/naresh-FD" {...externalLink}>
-                <SiGithub aria-hidden="true" /> GitHub
-              </a>
-            </div>
-          </div>
-
           <aside className="hero-portrait" aria-label="Naresh Kumar R profile">
             <div className="portrait-frame">
               <img src="https://avatars.githubusercontent.com/u/50324374?v=4" alt="Naresh Kumar R" className="avatar" />
             </div>
-            <div className="profile-strip">
-              <div>
-                <p className="profile-name">Enterprise architecture</p>
-                <p className="profile-meta">Banking / Identity / Developer experience</p>
-              </div>
-              <span className="availability">Chennai, India</span>
-            </div>
-            <div className="portrait-note" aria-hidden="true">
-              <span>13+</span>
-              <p>Years building<br />across the stack.</p>
-            </div>
           </aside>
+
+          <div className="hero-copy">
+            <p className="eyebrow">About me</p>
+            <h1 id="hero-title">Naresh Kumar R</h1>
+            <p className="role-line">Associate Architect with 13+ years across full-stack engineering and technical leadership.</p>
+            <p className="intro">
+              I build secure enterprise platforms and local-first developer tools, bringing together frontend architecture, identity modernization, and practical AI adoption in regulated environments.
+            </p>
+            <div className="hero-actions" aria-label="Profile links">
+              <a className="social-icon-link primary" href="https://www.linkedin.com/in/naresh-kumar-r-a590181b/" aria-label="LinkedIn" data-label="LinkedIn" {...externalLink}>
+                <FaLinkedinIn size={21} aria-hidden="true" />
+              </a>
+              <a className="social-icon-link" href="mailto:mail2nareshfd@gmail.com" aria-label="Email" data-label="Email" {...externalLink}>
+                <Mail size={20} aria-hidden="true" />
+              </a>
+              <a className="social-icon-link" href="https://github.com/naresh-FD" aria-label="GitHub" data-label="GitHub" {...externalLink}>
+                <SiGithub size={20} aria-hidden="true" />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="section about-section" id="about" aria-labelledby="about-title">
         <div className="section-heading sticky-heading">
-          <p className="eyebrow">About me</p>
+          <p className="eyebrow">How I work</p>
           <h2 id="about-title">Architecture grounded in delivery.</h2>
         </div>
         <div className="about-copy">
@@ -283,27 +251,12 @@ export default function Home() {
               <h3>{technology.group}</h3>
               <div className="tech-list">
                 {technology.items.map((item) => (
-                  <span key={item.name}><item.icon size={19} aria-hidden="true" />{item.name}</span>
+                  <span className="tech-icon" key={item.name} data-label={item.name} aria-label={item.name}>
+                    <item.icon size={28} aria-hidden="true" />
+                  </span>
                 ))}
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="section experience-section" id="experience" aria-labelledby="experience-title">
-        <div className="section-heading">
-          <p className="eyebrow">Professional experience</p>
-          <h2 id="experience-title">From full-stack delivery to architecture.</h2>
-        </div>
-        <div className="timeline">
-          {experience.map((item) => (
-            <article className="timeline-row" key={item.role}>
-              <span className="timeline-marker" aria-hidden="true" />
-              <div className="timeline-role"><h3>{item.role}</h3><p>{item.organization}</p></div>
-              <strong>{item.duration}</strong>
-              <p>{item.focus}</p>
-            </article>
           ))}
         </div>
       </section>
@@ -330,9 +283,8 @@ export default function Home() {
           </div>
           <div className="contact-list" aria-label="Contact links">
             {contacts.map((contact) => (
-              <a className="contact-card" href={contact.href} key={contact.label} {...externalLink}>
-                <span className="contact-icon" aria-hidden="true"><contact.icon size={22} strokeWidth={1.9} /></span>
-                <span className="contact-details"><span>{contact.label}</span><strong>{contact.value}</strong></span>
+              <a className="contact-card" href={contact.href} key={contact.label} aria-label={contact.label} data-label={contact.label} {...externalLink}>
+                <contact.icon className={contact.iconClass} size={contact.iconClass ? 26 : 24} strokeWidth={1.9} aria-hidden="true" />
               </a>
             ))}
           </div>
