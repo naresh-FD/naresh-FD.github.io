@@ -10,6 +10,7 @@ import {
   Workflow,
 } from "lucide-react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
+import { ThemeToggle } from "./theme-toggle";
 
 const externalLink = {
   target: "_blank",
@@ -125,11 +126,14 @@ export default function Home() {
       <section className="hero" aria-labelledby="hero-title">
         <nav className="nav" aria-label="Primary navigation">
           <a className="brand" href="#top">NKR</a>
-          <div className="nav-links">
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
+          <div className="nav-actions">
+            <div className="nav-links">
+              <a href="#about">About</a>
+              <a href="#work">Work</a>
+              <a href="#experience">Experience</a>
+              <a href="#contact">Contact</a>
+            </div>
+            <ThemeToggle />
           </div>
         </nav>
 
