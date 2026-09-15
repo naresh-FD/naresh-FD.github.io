@@ -325,14 +325,13 @@ h2 {
 .project-card p { margin-bottom: 0; color: var(--work-muted); line-height: 1.58; }
 .project-footer { position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; border-top: 1px solid var(--work-line); padding-top: 17px; }
 .project-footer > span { color: #8794b4; font-size: .75rem; font-weight: 720; letter-spacing: .02em; }
-.project-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 14px; }
-.project-card a, .work-archive a { display: inline-flex; width: max-content; max-width: 100%; align-items: center; gap: 5px; color: var(--accent); font-size: .88rem; font-weight: 820; }
-.project-card a svg, .work-archive a svg { transition: transform 160ms ease; }
-.project-card a:hover svg, .work-archive a:hover svg { transform: translate(2px, -2px); }
+.project-card a { display: inline-flex; width: max-content; max-width: 100%; align-items: center; gap: 5px; color: var(--accent); font-size: .88rem; font-weight: 820; }
+.project-card a svg { transition: transform 160ms ease; }
+.project-card a:hover svg { transform: translate(2px, -2px); }
 
 .work-archive { display: flex; align-items: center; justify-content: space-between; gap: 26px; border-top: 1px solid var(--work-line); margin-top: 26px; padding-top: 24px; }
 .work-archive p { max-width: 620px; margin: 0; color: var(--work-muted); font-size: .9rem; line-height: 1.55; }
-.work-archive a { flex: 0 0 auto; }
+.work-archive > span { color: #8794b4; font-size: .78rem; font-weight: 720; text-align: right; }
 
 .tech-section { display: grid; grid-template-columns: minmax(260px, .75fr) minmax(0, 1.25fr); gap: clamp(34px, 7vw, 86px); }
 .tech-groups { border-top: 1px solid var(--line); }
@@ -394,7 +393,7 @@ h2 {
   .profile-stat { grid-template-columns: 62px 1fr; align-items: baseline; }
   .profile-stats > a { grid-column: auto; padding-top: 18px; }
   .project-footer, .work-archive { align-items: flex-start; flex-direction: column; }
-  .project-links { justify-content: flex-start; }
+  .work-archive > span { text-align: left; }
 }
 
 @media (max-width: 420px) {

@@ -84,8 +84,7 @@ const projects = [
     date: "Aug 2026",
     language: "TypeScript · Local AI",
     summary: "A local-first test generation system that combines AST analysis with reviewable AI output for React codebases.",
-    href: "https://github.com/naresh-FD/react-intelligent-test-generator",
-    liveHref: "https://naresh-fd.github.io/react-intelligent-test-generator/",
+    docsHref: "https://naresh-fd.github.io/react-intelligent-test-generator/",
     featured: true,
   },
   {
@@ -94,7 +93,7 @@ const projects = [
     date: "Aug 2026",
     language: "TypeScript · OWASP",
     summary: "Production documentation and validation evidence for running Argus against OWASP Juice Shop security scenarios.",
-    href: "https://github.com/naresh-FD/argus-security-validation-docs",
+    docsHref: "https://naresh-fd.github.io/argus-security-validation-docs/",
     featured: true,
   },
   {
@@ -103,8 +102,7 @@ const projects = [
     date: "Aug 2026",
     language: "TypeScript · Java",
     summary: "Generates layered Markdown, PDF, and searchable web documentation for React, TypeScript, Java, and Spring Boot repositories.",
-    href: "https://github.com/naresh-FD/RepoScribe",
-    liveHref: "https://naresh-fd.github.io/RepoScribe/",
+    docsHref: "https://naresh-fd.github.io/RepoScribe/",
   },
   {
     name: "Conduit Architecture",
@@ -112,8 +110,7 @@ const projects = [
     date: "Aug 2026",
     language: "Architecture · Delivery",
     summary: "A public architecture and delivery webdoc for the Conduit platform, covering its threat model and phased delivery gates.",
-    href: "https://github.com/naresh-FD/conduit-docs",
-    liveHref: "https://naresh-fd.github.io/conduit-docs/",
+    docsHref: "https://naresh-fd.github.io/conduit-docs/",
   },
   {
     name: "Mileage Tracker",
@@ -121,7 +118,6 @@ const projects = [
     date: "Jul 2026",
     language: "React · Capacitor",
     summary: "A local-first Android app for trip, fuel, mileage, and spend tracking with SQLite-backed persistence and analytics.",
-    href: "https://github.com/naresh-FD/milage-tracker",
   },
   {
     name: "React TestGen Coverage",
@@ -129,7 +125,6 @@ const projects = [
     date: "Mar 2026",
     language: "Python · Ollama",
     summary: "A locally runnable fine-tuned model pipeline for generating Jest and React Testing Library tests from TSX components.",
-    href: "https://github.com/naresh-FD/react-testgen-coverage",
   },
   {
     name: "ListSync",
@@ -137,7 +132,6 @@ const projects = [
     date: "Mar 2026",
     language: "Expo · Firebase",
     summary: "A mobile-first shared list manager with authentication, favourites, offline storage, and Firestore synchronization.",
-    href: "https://github.com/naresh-FD/listsync",
   },
   {
     name: "Banking Data Assessment",
@@ -145,7 +139,6 @@ const projects = [
     date: "Feb 2026",
     language: "TypeScript · Data",
     summary: "An anonymized banking dataset and structured assessment environment for evaluating analysis and engineering skills.",
-    href: "https://github.com/naresh-FD/banking-dashboard-TESTGEN-",
   },
 ];
 
@@ -269,8 +262,8 @@ export default function Home() {
               <span>{stat.label}</span>
             </div>
           ))}
-          <a href="https://github.com/naresh-FD?tab=repositories" {...externalLink}>
-            Explore all GitHub work <ArrowUpRight size={17} aria-hidden="true" />
+          <a href="#work">
+            Explore latest work <ArrowUpRight size={17} aria-hidden="true" />
           </a>
         </div>
       </section>
@@ -322,17 +315,14 @@ export default function Home() {
               <p>{project.summary}</p>
               <div className="project-footer">
                 <span>{project.language}</span>
-                <div className="project-links">
-                  {project.liveHref ? <a href={project.liveHref} aria-label={`Open ${project.name} live site`} {...externalLink}>Live site <ArrowUpRight size={15} aria-hidden="true" /></a> : null}
-                  <a href={project.href} aria-label={`Open ${project.name} on GitHub`} {...externalLink}>GitHub <ArrowUpRight size={15} aria-hidden="true" /></a>
-                </div>
+                {project.docsHref ? <a href={project.docsHref} aria-label={`Open ${project.name} documentation`} {...externalLink}>View documentation <ArrowUpRight size={15} aria-hidden="true" /></a> : null}
               </div>
             </article>
           ))}
         </div>
         <div className="work-archive">
           <p>Older experiments, UI patterns, backend prototypes, and learning projects are preserved on GitHub.</p>
-          <a href="https://github.com/naresh-FD?tab=repositories" {...externalLink}>Browse all 34 repositories <ArrowUpRight size={16} aria-hidden="true" /></a>
+          <span>Public documentation is linked directly from each available project.</span>
         </div>
       </section>
 

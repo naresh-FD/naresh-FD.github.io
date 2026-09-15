@@ -29,9 +29,11 @@ test("includes the selected recent GitHub work", () => {
     assert.ok(output.includes(project), `Expected the export to include ${project}`);
   }
 
-  assert.match(output, /github\.com\/naresh-FD\/react-intelligent-test-generator/);
-  assert.match(output, /github\.com\/naresh-FD\/argus-security-validation-docs/);
-  assert.match(output, /github\.com\/naresh-FD\?tab=repositories/);
+  assert.match(output, /naresh-fd\.github\.io\/react-intelligent-test-generator/);
+  assert.match(output, /naresh-fd\.github\.io\/argus-security-validation-docs/);
+  assert.match(output, /naresh-fd\.github\.io\/RepoScribe/);
+  assert.match(output, /naresh-fd\.github\.io\/conduit-docs/);
+  assert.doesNotMatch(output, /github\.com\/naresh-FD\/argus-security-validation-docs/);
 });
 
 test("keeps external links safe and the theme control accessible", () => {
