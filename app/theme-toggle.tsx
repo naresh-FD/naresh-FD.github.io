@@ -1,23 +1,29 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark";
 
-export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
+const themeEvent = "portfolio-theme-change";
 
-  useEffect(() => {
-    const activeTheme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
-    setTheme(activeTheme);
-  }, []);
+function getTheme(): Theme {
+  return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+}
+
+function subscribeToTheme(onChange: () => void) {
+  window.addEventListener(themeEvent, onChange);
+  return () => window.removeEventListener(themeEvent, onChange);
+}
+
+export function ThemeToggle() {
+  const theme = useSyncExternalStore(subscribeToTheme, getTheme, () => "light");
 
   const toggleTheme = () => {
     const nextTheme: Theme = theme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = nextTheme;
     localStorage.setItem("portfolio-theme", nextTheme);
-    setTheme(nextTheme);
+    window.dispatchEvent(new Event(themeEvent));
   };
 
   return (

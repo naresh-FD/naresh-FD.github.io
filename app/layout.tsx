@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://naresh-fd.github.io"),
   title: "Naresh Kumar R | Associate Architect",
   description:
-    "Associate Architect with 13+ years in full-stack engineering, secure banking architecture, and local-first AI developer tooling.",
+    "Associate Architect building secure enterprise platforms, local-first AI developer tools, repository intelligence, and mobile products.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Naresh Kumar R | Associate Architect",
     description:
-      "Full-stack engineering, secure banking architecture, and local-first AI developer tooling.",
+      "Secure enterprise platforms, local-first AI developer tools, repository intelligence, and mobile products.",
     url: "https://naresh-fd.github.io/",
     siteName: "Naresh Kumar R",
     images: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Naresh Kumar R | Associate Architect",
     description:
-      "Full-stack engineering, secure banking architecture, and local-first AI developer tooling.",
+      "Secure enterprise platforms, local-first AI developer tools, repository intelligence, and mobile products.",
     images: ["/og-theme.png"],
   },
 };

@@ -1,4 +1,5 @@
 import {
+  ArrowUpRight,
   Blocks,
   Braces,
   CloudCog,
@@ -11,10 +12,14 @@ import {
   Sparkles,
   Workflow,
 } from "lucide-react";
+import Image from "next/image";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { SiGithub } from "react-icons/si";
 import {
   SiAngular,
+  SiCapacitor,
+  SiExpo,
+  SiFirebase,
   SiGithubactions,
   SiGithubcopilot,
   SiJavascript,
@@ -74,29 +79,80 @@ const currentAreas = [
 
 const projects = [
   {
-    name: "Argus",
-    status: "In active development",
-    summary: "Local-first code and pull-request scanning for security, quality, and compliance issues.",
-    href: "https://github.com/naresh-FD/Argus/blob/main/docs/local-workflows.md",
+    name: "React Intelligent Test Generator",
+    status: "Flagship project",
+    date: "Aug 2026",
+    language: "TypeScript · Local AI",
+    summary: "A local-first test generation system that combines AST analysis with reviewable AI output for React codebases.",
+    href: "https://github.com/naresh-FD/react-intelligent-test-generator",
+    liveHref: "https://naresh-fd.github.io/react-intelligent-test-generator/",
+    featured: true,
   },
   {
-    name: "TestGen",
-    status: "AST-based generation",
-    summary: "Automated test generation across React, Java, and Python with reviewable local output.",
-    href: "https://naresh-fd.github.io/react-intelligent-test-generator/",
+    name: "Argus Security Validation",
+    status: "Security engineering",
+    date: "Aug 2026",
+    language: "TypeScript · OWASP",
+    summary: "Production documentation and validation evidence for running Argus against OWASP Juice Shop security scenarios.",
+    href: "https://github.com/naresh-FD/argus-security-validation-docs",
+    featured: true,
   },
   {
     name: "RepoScribe",
-    status: "Repository intelligence",
-    summary: "Automated multi-language repository documentation for faster onboarding and maintenance.",
-    href: "https://naresh-fd.github.io/RepoScribe/",
+    status: "Developer tooling",
+    date: "Aug 2026",
+    language: "TypeScript · Java",
+    summary: "Generates layered Markdown, PDF, and searchable web documentation for React, TypeScript, Java, and Spring Boot repositories.",
+    href: "https://github.com/naresh-FD/RepoScribe",
+    liveHref: "https://naresh-fd.github.io/RepoScribe/",
   },
   {
-    name: "Copilot Governance",
-    status: "Standards & policy",
-    summary: "Reusable Copilot instructions, repository standards, guardrails, and automated policy sync.",
-    href: "https://naresh-fd.github.io/copilot-governance/",
+    name: "Conduit Architecture",
+    status: "Platform architecture",
+    date: "Aug 2026",
+    language: "Architecture · Delivery",
+    summary: "A public architecture and delivery webdoc for the Conduit platform, covering its threat model and phased delivery gates.",
+    href: "https://github.com/naresh-FD/conduit-docs",
+    liveHref: "https://naresh-fd.github.io/conduit-docs/",
   },
+  {
+    name: "Mileage Tracker",
+    status: "Mobile product",
+    date: "Jul 2026",
+    language: "React · Capacitor",
+    summary: "A local-first Android app for trip, fuel, mileage, and spend tracking with SQLite-backed persistence and analytics.",
+    href: "https://github.com/naresh-FD/milage-tracker",
+  },
+  {
+    name: "React TestGen Coverage",
+    status: "Model research",
+    date: "Mar 2026",
+    language: "Python · Ollama",
+    summary: "A locally runnable fine-tuned model pipeline for generating Jest and React Testing Library tests from TSX components.",
+    href: "https://github.com/naresh-FD/react-testgen-coverage",
+  },
+  {
+    name: "ListSync",
+    status: "Mobile application",
+    date: "Mar 2026",
+    language: "Expo · Firebase",
+    summary: "A mobile-first shared list manager with authentication, favourites, offline storage, and Firestore synchronization.",
+    href: "https://github.com/naresh-FD/listsync",
+  },
+  {
+    name: "Banking Data Assessment",
+    status: "Engineering assessment",
+    date: "Feb 2026",
+    language: "TypeScript · Data",
+    summary: "An anonymized banking dataset and structured assessment environment for evaluating analysis and engineering skills.",
+    href: "https://github.com/naresh-FD/banking-dashboard-TESTGEN-",
+  },
+];
+
+const profileStats = [
+  { value: "13+", label: "Years in engineering" },
+  { value: "34", label: "Public repositories" },
+  { value: "08", label: "Recent projects" },
 ];
 
 const technologies = [
@@ -135,6 +191,15 @@ const technologies = [
       { name: "GitHub Copilot", icon: SiGithubcopilot },
     ],
   },
+  {
+    group: "Mobile & cloud",
+    items: [
+      { name: "Expo", icon: SiExpo },
+      { name: "Capacitor", icon: SiCapacitor },
+      { name: "Firebase", icon: SiFirebase },
+      { name: "Cloud architecture", icon: CloudCog },
+    ],
+  },
 ];
 
 const contacts = [
@@ -154,6 +219,7 @@ export default function Home() {
             <div className="nav-links">
               <a href="#about">About</a>
               <a href="#work">Work</a>
+              <a href="#stack">Stack</a>
               <a href="#contact">Contact</a>
             </div>
             <ThemeToggle />
@@ -163,7 +229,15 @@ export default function Home() {
         <div className="hero-grid" id="top">
           <aside className="hero-portrait" aria-label="Naresh Kumar R profile">
             <div className="portrait-frame">
-              <img src="https://avatars.githubusercontent.com/u/50324374?v=4" alt="Naresh Kumar R" className="avatar" />
+              <Image
+                src="https://avatars.githubusercontent.com/u/50324374?v=4"
+                alt="Naresh Kumar R"
+                className="avatar"
+                width={390}
+                height={444}
+                priority
+                unoptimized
+              />
             </div>
           </aside>
 
@@ -186,6 +260,18 @@ export default function Home() {
               </a>
             </div>
           </div>
+        </div>
+
+        <div className="profile-stats" aria-label="Profile highlights">
+          {profileStats.map((stat) => (
+            <div className="profile-stat" key={stat.label}>
+              <strong>{stat.value}</strong>
+              <span>{stat.label}</span>
+            </div>
+          ))}
+          <a href="https://github.com/naresh-FD?tab=repositories" {...externalLink}>
+            Explore all GitHub work <ArrowUpRight size={17} aria-hidden="true" />
+          </a>
         </div>
       </section>
 
@@ -223,24 +309,34 @@ export default function Home() {
       <section className="section work-section" id="work" aria-labelledby="work-title">
         <div className="section-heading work-heading">
           <div>
-            <p className="eyebrow">AI developer tooling</p>
-            <h2 id="work-title">Built for regulated environments.</h2>
+            <p className="eyebrow">Latest work · 2026</p>
+            <h2 id="work-title">Ideas turned into working systems.</h2>
           </div>
-          <p>Personal-interest projects designed so source code and sensitive data can remain inside the local environment.</p>
+          <p>A current selection spanning local AI, security validation, repository intelligence, platform architecture, and mobile products.</p>
         </div>
         <div className="project-grid">
           {projects.map((project, index) => (
-            <article className="project-card" key={project.name}>
-              <div className="project-topline"><span>0{index + 1}</span><strong>{project.status}</strong></div>
+            <article className={`project-card${project.featured ? " project-card-featured" : ""}`} key={project.name}>
+              <div className="project-topline"><span>{String(index + 1).padStart(2, "0")}</span><strong>{project.status}</strong><time>{project.date}</time></div>
               <h3>{project.name}</h3>
               <p>{project.summary}</p>
-              <a href={project.href} aria-label={`Open ${project.name} documentation`} {...externalLink}>View documentation</a>
+              <div className="project-footer">
+                <span>{project.language}</span>
+                <div className="project-links">
+                  {project.liveHref ? <a href={project.liveHref} aria-label={`Open ${project.name} live site`} {...externalLink}>Live site <ArrowUpRight size={15} aria-hidden="true" /></a> : null}
+                  <a href={project.href} aria-label={`Open ${project.name} on GitHub`} {...externalLink}>GitHub <ArrowUpRight size={15} aria-hidden="true" /></a>
+                </div>
+              </div>
             </article>
           ))}
         </div>
+        <div className="work-archive">
+          <p>Older experiments, UI patterns, backend prototypes, and learning projects are preserved on GitHub.</p>
+          <a href="https://github.com/naresh-FD?tab=repositories" {...externalLink}>Browse all 34 repositories <ArrowUpRight size={16} aria-hidden="true" /></a>
+        </div>
       </section>
 
-      <section className="section tech-section" aria-labelledby="tech-title">
+      <section className="section tech-section" id="stack" aria-labelledby="tech-title">
         <div className="section-heading">
           <p className="eyebrow">Core technologies</p>
           <h2 id="tech-title">A full-stack toolkit shaped by production work.</h2>
@@ -267,10 +363,10 @@ export default function Home() {
           <h2 id="current-title">What I&apos;m exploring now.</h2>
         </div>
         <ul className="focus-list">
-          <li><Braces aria-hidden="true" /><span>Evolving <strong>Argus</strong> with broader language coverage and a tighter pull-request review workflow.</span></li>
-          <li><Sparkles aria-hidden="true" /><span>Local inference for developer workflows using small and fine-tuned models through <strong>Ollama</strong>.</span></li>
-          <li><Workflow aria-hidden="true" /><span>Agentic code-analysis pipelines with <strong>LangGraph</strong>.</span></li>
-          <li><ShieldCheck aria-hidden="true" /><span>Measuring the quality impact of AI-assisted development, not only the speed.</span></li>
+          <li><Braces aria-hidden="true" /><span>Advancing <strong>TestGen</strong> with evidence-backed evaluation and reviewable, AST-aware output.</span></li>
+          <li><ShieldCheck aria-hidden="true" /><span>Validating <strong>Argus</strong> against realistic OWASP security scenarios and production expectations.</span></li>
+          <li><Workflow aria-hidden="true" /><span>Turning repository structure into useful onboarding material through <strong>RepoScribe</strong>.</span></li>
+          <li><Sparkles aria-hidden="true" /><span>Designing local-first tools where productivity, privacy, and engineering quality reinforce each other.</span></li>
         </ul>
       </section>
 
